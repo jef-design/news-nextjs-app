@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MenuIcon, SearchIcon } from "@heroicons/react/solid";
 import { useSession, signOut,signIn } from "next-auth/client";
 import ReactTooltip from "react-tooltip";
+import Image from 'next/image'
 
 const Header = ({toggle}) => {
     const [session] = useSession();
@@ -64,16 +65,19 @@ const Header = ({toggle}) => {
                         className="hover:bg-gray-100 rounded-full p-2"
                     >
                         <div className="bg-gray-500 h-7 w-7 rounded-full">
-                            {!session ? <img
+                            {!session ? <Image
                                 src=""
                                 alt=""
                                 className="rounded-full"
+                                layout="fill"
+                                
                             />:
-                            <img
+                            <Image
                                 onClick={signOut}
                                 src={session.user.image}
                                 alt=""
                                 className="rounded-full"
+                                layout="fill"
                             />}
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import NewsCard from "../../components/Article/NewsCard";
 import Head from "next/head";
 import HeaderPage from "../../components/Helper/HeaderPage";
 
-function sports() {
+function Sports() {
     const dispatch = useDispatch();
     const sports = useSelector(state => state.fetchnews.sports);
 
@@ -46,4 +46,4 @@ function sports() {
     );
 }
 
-export default sports;
+export default Sports;

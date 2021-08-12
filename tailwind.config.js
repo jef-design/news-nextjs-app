@@ -11,6 +11,9 @@ module.exports = {
         'sports': '#fa7b17',
         'science': '#df3093',
         'health': '#4285f4',
+      },
+      fontFamily:{
+        'sans': ['Roboto', 'sans-serif'],
       }
       
     },

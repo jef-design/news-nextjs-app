@@ -15,12 +15,12 @@ function NewsCard({
     return (
         <>
             <Link href={url}>
-                <div className="p-3 border border-gray-300 rounded-lg cursor-pointer mb-6 sm:text-sm">
+                <div className="p-3 border border-gray-300 rounded-lg cursor-pointer mb-6 group sm:text-sm">
                     <div className="flex justify-between">
                         <div className="pr-3 peer">
-                            <h2 className="text-xl text-left font-medium sm:text-lg peer-hover:bg-blue-500">
+                            <h3 className="text-xl text-left font-medium sm:text-lg group-hover:underline">
                                 {title}
-                            </h2>
+                            </h3>
                             <div className="flex text-gray-400 text-xs mt-2 mb-2">
                                 {source &&
                                     [source].map((s, i) => {

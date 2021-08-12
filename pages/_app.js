@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/index.css";
 import { Provider as ReduxProvider } from "react-redux";
 import Layout from "../components/Layout/Layout";
 import configStore from "../store/configStore";

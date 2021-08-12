@@ -7,7 +7,8 @@ const request = {
             fetchEntertainment: `top-headlines?country=ph&category=entertainment&apiKey=${API_KEY}`,
             fetchSports: `top-headlines?country=ph&category=sports&apiKey=${API_KEY}`,
             fetchScience: `top-headlines?country=ph&category=science&apiKey=${API_KEY}`,
-            fetchHealth: `top-headlines?country=ph&category=health&apiKey=${API_KEY}`
+            fetchHealth: `top-headlines?country=ph&category=health&apiKey=${API_KEY}`,
+            fetchSearch: `everything?q=&apiKey=${API_KEY}`
 
 }
 export default request;

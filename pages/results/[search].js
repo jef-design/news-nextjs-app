@@ -1,27 +1,26 @@
 import React, { useEffect } from "react";
-import { fetchBusiness } from "../../store/actions/newsAction";
+import { fetchSearch } from "../../store/actions/searchAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from "next/head";
-import HeaderPage from "../../components/Helper/HeaderPage";
+import Head from 'next/head'
 
-function Business() {
+function SearchResult() {
     const dispatch = useDispatch();
-    const business = useSelector(state => state.fetchnews.business);
+    const query = useSelector(state => state.search.query)
+    const search = useSelector(state => state.search.searchnews);
 
 
     useEffect(() => {
-        dispatch(fetchBusiness());
+        dispatch(fetchSearch(query));
     }, []);
     return (
         <section>
             <Head>
-                <title>Google News - Business</title>
+                <title>Google News - Search - {query}</title>
             </Head>
-            <HeaderPage pageimage="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"  pagetitle="Business" iconcolor="bg-business" />
 
-            {business &&
-                business.map((b, i) => {
+            {search &&
+                search.map((b, i) => {
                     const {
                         title,
                         urlToImage,
@@ -45,7 +44,7 @@ function Business() {
                     );
                 })}
         </section>
-    );
+    )
 }
 
-export default Business;
+export default SearchResult

@@ -17,7 +17,7 @@ function News() {
     }, [])
     return (
         <section className="ml-5 md:ml-0">
-            <div className="flex justify-between items-center"><h2 className="mb-2 font-medium text-xl">Headlines</h2>
+            <div className="flex justify-between items-center"><h2 className="mb-2 font-medium text-xl font-sans">Headlines</h2>
             <p className="text-xs text-blue-600 font-medium cursor-pointer">More Headlines</p></div>
             <div className="px-3 py-4 border border-gray-300 rounded-lg mb-5 hover:shadow ease-in-out cursor-pointer" >
                <div className="flex justify-between items-center">

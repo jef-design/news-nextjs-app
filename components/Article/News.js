@@ -27,7 +27,7 @@ function News() {
             </div>
             <div className="mb-5">
                 <h2 className="font-medium text-xl">Good day, {session.user.name}</h2>
-                <p>Here's what you need to know.</p>
+                <p>Here&apos;s what you need to know.</p>
             </div>
             {topheadlines && topheadlines.map((headlines, i) => {
                 const {title,urlToImage,description,publishedAt,source=[],url,content} = headlines;

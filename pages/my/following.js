@@ -24,7 +24,7 @@ function Following() {
                     height={150}
                     width={150}
                     />
-                    <p>When you follow a topic it will appear here. You'll also see more related stories in the For You feed.</p>
+                    <p>When you follow a topic it will appear here. You&apos;ll also see more related stories in the For You feed.</p>
                 </div>
             </div>
             <div className="mb-4">
@@ -48,7 +48,7 @@ function Following() {
                     height={150}
                     width={150}
                     />
-                    <p>When you follow a source it will appear here. You'll also see more stories from that source in the For You feed.</p>
+                    <p>When you follow a source it will appear here. You&apos;ll also see more stories from that source in the For You feed.</p>
                 </div>
             </div>
 

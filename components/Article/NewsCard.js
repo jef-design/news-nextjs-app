@@ -37,11 +37,11 @@ function NewsCard({
                             </div>
                         </div>
                         <div className="pl-2 text max-w-[200px] sm:max-w-[120px]">
-                            {/* <img
+                            <img
                                 src={urlToImage}
                                 alt=""
                                 className="w-full rounded-lg"
-                            /> */}
+                            />
                         </div>
                     </div>
                     <div className="my-2">

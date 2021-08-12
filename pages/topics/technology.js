@@ -13,7 +13,7 @@ function Technology() {
 
     useEffect(() => {
         dispatch(fetchTechnology());
-    }, []);
+    }, [dispatch]);
     return (
         <section>
             <Head>

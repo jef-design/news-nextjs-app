@@ -11,7 +11,7 @@ function Science() {
 
     useEffect(() => {
         dispatch(fetchScience());
-    }, []);
+    }, [dispatch]);
     return (
         <section>
             <Head>

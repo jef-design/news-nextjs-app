@@ -16,7 +16,7 @@ function Account({ isOpen,setIsOpen }) {
         return () => {
             document.addEventListener("mousedown", handler)
         }
-    }, [])
+    }, [setIsOpen])
 
     return (
         <div

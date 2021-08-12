@@ -12,7 +12,7 @@ function Business() {
 
     useEffect(() => {
         dispatch(fetchBusiness());
-    }, []);
+    }, [dispatch]);
     return (
         <section>
             <Head>

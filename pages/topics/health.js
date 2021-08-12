@@ -11,7 +11,7 @@ function Health() {
 
     useEffect(() => {
         dispatch(fetchHealth());
-    }, []);
+    }, [dispatch]);
     return (
         <section>
             <Head>

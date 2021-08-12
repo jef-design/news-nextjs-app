@@ -14,7 +14,7 @@ function News() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchTopHeadlines())
-    }, [])
+    }, [dispatch])
     return (
         <section className="ml-5 md:ml-0">
             <div className="flex justify-between items-center"><h2 className="mb-2 font-medium text-xl font-sans">Headlines</h2>

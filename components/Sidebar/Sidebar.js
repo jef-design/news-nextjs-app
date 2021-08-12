@@ -34,7 +34,7 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
         window.addEventListener('resize', resizeHandler);
 
         return () => window.removeEventListener('resize', resizeHandler);
-      }, []);
+      }, [setIsOpen]);
     
     return (
         <div

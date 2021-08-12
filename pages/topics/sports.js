@@ -11,7 +11,7 @@ function Sports() {
 
     useEffect(() => {
         dispatch(fetchSports());
-    }, []);
+    }, [dispatch]);
     return (
         <section>
             <Head>

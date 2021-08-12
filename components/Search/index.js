@@ -19,20 +19,34 @@ function Search({isSearch,setIsSearch,searchInput}) {
         dispatch(searchQuery(query));
         router.push(`/results/${query}`)
     }
+    // useEffect(() => {
+    //     if (window.screen.width > 768) {
+    //       window.addEventListener('resize', resizeHandler);
+    //     }
+    //     else{
+    //         setIsSearch(true)
+    //     }
+    //      const resizeHandler = () => {
+    //     setIsSearch(false)
+    //   }
+
+    //     return () => window.removeEventListener('resize', resizeHandler);
+    //   }, [resizeHandler,setIsSearch]);
+
     useEffect(() => {
-        if (window.screen.width > 768) {
-          window.addEventListener('resize', resizeHandler);
-        }
-        else{
-            setIsSearch(true)
-        }
+        const resizeHandler = () =>{
+            if (window.innerWidth < 768) {
+                setIsOpen(false)
+              }
+              else if(window.innerWidth > 768){
+                  setIsSearch(true)
+              }
+        };
+        window.addEventListener('resize', resizeHandler);
+
         return () => window.removeEventListener('resize', resizeHandler);
-      }, []);
+      }, [setIsSearch]);
     
-      const resizeHandler = () => {
-        setIsSearch(false)
-      }
-      
     return (
         <form style={{display: isSearch ? 'block' : ""}} onSubmit={SubmitHandler} className="w-full flex justify-center ml-2 mr-1 group-focus:bg-white sm:hidden sm:ml-0 sm:mr-0">
                 <div className="flex items-center border rounded-lg p-2 w-full max-w-2xl bg-gray-100 focus-within:bg-white focus-within:shadow-md">

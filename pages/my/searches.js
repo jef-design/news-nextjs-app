@@ -20,6 +20,7 @@ function Searches() {
                 <div className="page-card">
                 <Image
                     src="https://lh3.googleusercontent.com/o_tai07eFNo8w2jfrZY_vh2Mv3DnrgXM1Ven6HBYn4vFxe949KwJgvAhYdq2Hmr4C_5jUbkkn84=-rw"
+                    alt="Search card"
                     height={150}
                     width={150}
                     />

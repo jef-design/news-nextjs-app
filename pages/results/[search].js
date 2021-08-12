@@ -12,7 +12,7 @@ function SearchResult() {
 
     useEffect(() => {
         dispatch(fetchSearch(query));
-    }, []);
+    }, [dispatch,query]);
     return (
         <section>
             <Head>

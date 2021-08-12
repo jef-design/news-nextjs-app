@@ -21,6 +21,7 @@ function Following() {
                 <div className="page-card">
                     <Image
                     src="https://lh3.googleusercontent.com/nuos3uRehQ6gjGOJeBVvbTBnKGRpFBNScAyr9f3Z9CEpd_Loi1zB39poSX9QbdIjTNevSt2o=-rw"
+                    alt="Follow card"
                     height={150}
                     width={150}
                     />
@@ -33,6 +34,7 @@ function Following() {
                 <div className="page-card">
                 <Image
                     src="https://lh3.googleusercontent.com/SOCn77ylz-ppK_80GxYfcNeHebloX7Vx9IvKbGzL6Aken01llMjZYjKoPTsvSTkGkBc1rwL2=-rw"
+                    alt="Local card"
                     height={150}
                     width={150}
                     />
@@ -45,6 +47,7 @@ function Following() {
                 <div className="page-card">
                 <Image
                     src="https://lh3.googleusercontent.com/tFGfZ19wiRAvJsi5LeFL42_k_gV7bXV6dj3aKnatkcPRWKpu2fHUp367Awcdd7JceiE_bzBc=-rw"
+                    alt="Sources card"
                     height={150}
                     width={150}
                     />

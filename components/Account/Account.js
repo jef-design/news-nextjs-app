@@ -1,5 +1,6 @@
 import React,{ useEffect,useRef } from 'react'
 import { useSession, signOut } from "next-auth/client";
+import Image from 'next/image'
 
 function Account({ isOpen,setIsOpen }) {
     const [session] = useSession();
@@ -26,15 +27,17 @@ function Account({ isOpen,setIsOpen }) {
         >
             <div className="flex justify-center items-center flex-col text-center">
                 {!session ? (
-                    <img
+                    <Image
                         src=""
                         alt=""
+                        layout="fill"
                         className="rounded-full h-20 w-20 mb-6"
                     />
                 ) : (
-                    <img
+                    <Image
                         src={session.user.image}
-                        alt=""
+                        alt="User image"
+                        layout="fill"
                         className="rounded-full h-20 w-20 mb-6"
                     />
                 )}

@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React,{ useEffect,useRef } from 'react'
 import {
     GlobeAltIcon,
     StarIcon,
@@ -21,6 +21,7 @@ import { useRouter } from 'next/router';
 
 function Sidebar({ isOpen, toggle,setIsOpen }) {
     const router = useRouter();
+    let accountMenu = useRef();
 
     useEffect(() => {
         const resizeHandler = () =>{
@@ -35,15 +36,30 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
 
         return () => window.removeEventListener('resize', resizeHandler);
       }, [setIsOpen]);
+
+      useEffect(() => {
+        let handler = (event) => {
+           if(!accountMenu.current.contains(event.target)) {
+               setIsOpen(false);
+           }
+       }
+
+       document.addEventListener("mousedown", handler);
+
+       return () => {
+           document.addEventListener("mousedown", handler)
+       }
+   }, [setIsOpen])
     
     return (
         <div
+        ref={accountMenu}
             isOpen={isOpen}
             // onClick={toggle}
             className="transition-all ease-linear duration-200 min-w-[260px] bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20"
             style={{ left: isOpen ? "0px" : "-350px" }}
         >
-            <Link href="/">
+            <Link href="/" passHref={true}>
                 <div className="flex items-center mb-8 px-6 py-1 mt-3">
                     <span className="text-xl cursor-pointer before:content-[url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg)]  h-5 w-20 inline-block"></span>
                     <span className="text-xl">News</span>

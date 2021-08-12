@@ -29,7 +29,7 @@ const Header = ({toggle}) => {
                     <MenuIcon onClick={toggle} className="h-5 w-5 cursor-pointer" />
                 </div>
 
-                <Link href="/">
+                <Link href="/" passHref={true}>
                     <div className="flex items-center cursor-pointer">
                         <span className="text-xl before:content-[url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg)]  h-5 w-20 inline-block"></span>
                         <span className="text-xl">News</span>

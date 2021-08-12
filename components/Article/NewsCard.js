@@ -14,7 +14,7 @@ function NewsCard({
 }) {
     return (
         <>
-            <Link href={url}>
+            <Link href={url} passHref={true}>
                 <div className="p-3 border border-gray-300 rounded-lg cursor-pointer mb-6 group sm:text-sm">
                     <div className="flex justify-between">
                         <div className="pr-3 peer">

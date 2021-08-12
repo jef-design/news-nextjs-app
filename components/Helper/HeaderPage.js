@@ -8,6 +8,7 @@ function HeaderPage({pagetitle,pageimage,iconcolor}) {
             <div className="flex items-center space-x-4">
                    <Image
                     src={pageimage}
+                    alt="header image"
                     height={60}
                     width={60}
                     className={`rounded-full ${iconcolor}`}

@@ -8,6 +8,7 @@ function Login() {
            
            <Image
                src="https://olhardigital.com.br/wp-content/uploads/2020/10/20201001121812.jpg"
+               alt="Google News"
                height={350}
                width={500}
                loading="lazy"

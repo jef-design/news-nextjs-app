@@ -28,16 +28,18 @@ function Account({ isOpen,setIsOpen }) {
             <div className="flex justify-center items-center flex-col text-center">
                 {!session ? (
                     <Image
-                        src=""
+                        src="/"
                         alt=""
-                        layout="fill"
+                        height={80}
+                        width={80}
                         className="rounded-full h-20 w-20 mb-6"
                     />
                 ) : (
                     <Image
                         src={session.user.image}
                         alt="User image"
-                        layout="fill"
+                        height={80}
+                        width={80}
                         className="rounded-full h-20 w-20 mb-6"
                     />
                 )}

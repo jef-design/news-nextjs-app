@@ -27,7 +27,7 @@ function Search({isSearch,setIsSearch,searchInput}) {
             setIsSearch(true)
         }
         return () => window.removeEventListener('resize', resizeHandler);
-      }, []);
+      }, [resizeHandler,setIsSearch]);
     
       const resizeHandler = () => {
         setIsSearch(false)

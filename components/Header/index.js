@@ -5,6 +5,7 @@ import { useSession } from "next-auth/client";
 import ReactTooltip from "react-tooltip";
 import Search from '../Search';
 import Account from '../Account/Account';
+import Image from 'next/image'
 
 const Header = ({toggle}) => {
     const [session] = useSession();
@@ -65,19 +66,26 @@ const Header = ({toggle}) => {
                         className="hover:bg-gray-100 rounded-full p-2"
                     >
                         <div className="bg-gray-500 h-7 w-7 rounded-full">
-                            {!session ? <img
-                                src=""
-                                alt=""
-                                className="rounded-full"
-    
-                            />:
-                            <img
-                                onClick={()=>{setIsOpen(!isOpen)}}
-                                src={session.user.image}
-                                alt=""
-                                className="rounded-full"
-      
-                            />}
+                        {!session ? (
+                    <Image
+                        
+                        src="/"
+                        alt=""
+                        height={28}
+                        width={28}
+                        className="rounded-full h-20 w-20 mb-6"
+                        
+                    />
+                ) : (
+                    <Image
+                    onClick={()=>{setIsOpen(!isOpen)}}
+                        src={session.user.image}
+                        alt="User image"
+                        height={28}
+                        width={28}
+                        className="rounded-full h-20 w-20 mb-6"
+                    />
+                )}
                         </div>
                     </div>
                 </div>

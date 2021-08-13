@@ -19,33 +19,34 @@ function Search({isSearch,setIsSearch,searchInput}) {
         dispatch(searchQuery(query));
         router.push(`/results/${query}`)
     }
-    // useEffect(() => {
-    //     if (window.screen.width > 768) {
-    //       window.addEventListener('resize', resizeHandler);
-    //     }
-    //     else{
-    //         setIsSearch(true)
-    //     }
-    //      const resizeHandler = () => {
-    //     setIsSearch(false)
-    //   }
-
-    //     return () => window.removeEventListener('resize', resizeHandler);
-    //   }, [resizeHandler,setIsSearch]);
-
     useEffect(() => {
-        const resizeHandler = () =>{
-            if (window.innerWidth < 768) {
-                setIsOpen(false)
-              }
-              else if(window.innerWidth > 768){
-                  setIsSearch(true)
-              }
-        };
-        window.addEventListener('resize', resizeHandler);
+        if (window.screen.width > 768) {
+          window.addEventListener('resize', resizeHandler);
+        }
+        else{
+            setIsSearch(true)
+        }
+         
 
         return () => window.removeEventListener('resize', resizeHandler);
-      }, [setIsSearch]);
+      }, []);
+      const resizeHandler = () => {
+        setIsSearch(false)
+      }
+
+    // useEffect(() => {
+    //     const resizeHandler = () =>{
+    //         if (window.innerWidth < 768) {
+    //             setIsSearch(false)
+    //           }
+    //           else if(window.innerWidth > 768){
+    //               setIsSearch(true)
+    //           }
+    //     };
+    //     window.addEventListener('resize`', resizeHandler);
+
+    //     return () => window.removeEventListener('resize', resizeHandler);
+    //   }, [setIsSearch]);
     
     return (
         <form style={{display: isSearch ? 'block' : ""}} onSubmit={SubmitHandler} className="w-full flex justify-center ml-2 mr-1 group-focus:bg-white sm:hidden sm:ml-0 sm:mr-0">

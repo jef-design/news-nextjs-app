@@ -56,7 +56,7 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
         ref={accountMenu}
             isOpen={isOpen}
             // onClick={toggle}
-            className="transition-all ease-linear duration-200 min-w-[260px] bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20"
+            className="transition-all ease-linear duration-200 min-w-[260px] h-screen bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20"
             style={{ left: isOpen ? "0px" : "-350px" }}
         >
             <Link href="/" passHref={true}>

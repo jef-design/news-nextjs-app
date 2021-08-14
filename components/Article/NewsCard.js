@@ -3,6 +3,10 @@ import ReactTimeAgo from "react-time-ago";
 import Image from "next/image";
 import Head from "next/head";
 
+const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
+
 function NewsCard({
     image,
     title,
@@ -12,6 +16,8 @@ function NewsCard({
     description,
     content,
 }) {
+
+    
     return (
         <>
             <Link href={url} passHref={true}>
@@ -37,11 +43,14 @@ function NewsCard({
                             </div>
                         </div>
                         <div className="pl-2 text max-w-[200px] sm:max-w-[120px]">
-                            {/* <img
-                                src={urlToImage}
+                            <Image
+                                loader={myLoader}
+                                src={image}
                                 alt=""
                                 className="w-full rounded-lg"
-                            /> */}
+                                width={150}
+                                height={100}
+                            />
                             {/* <p>{image}</p> */}
                         </div>
                     </div>

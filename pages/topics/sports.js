@@ -22,7 +22,7 @@ function Sports() {
                 sports.map((sport, i) => {
                     const {
                         title,
-                        urlToImage,
+                        image,
                         description,
                         publishedAt,
                         source = [],
@@ -33,7 +33,7 @@ function Sports() {
                         <NewsCard
                             key={i}
                             title={title}
-                            urlToImage={urlToImage}
+                            image={image}
                             description={description}
                             url={url}
                             publishedAt={publishedAt}

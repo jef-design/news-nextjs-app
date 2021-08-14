@@ -79,11 +79,11 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
                 href="/my/searches"
             />
             {/* <SidebarRow Icon={SearchIcon} name="COVID-19"  href="/" /> */}
-            <SidebarRow Icon={GlobeIcon} name="World" href="/" />
+            <SidebarRow Icon={GlobeIcon} name="World" href="/topics/world" />
             <SidebarRow
                 Icon={LocationMarkerIcon}
                 name="Your local news"
-                href="/"
+                href="/topics/nation"
             />
             <SidebarRow
                 Icon={BriefcaseIcon}

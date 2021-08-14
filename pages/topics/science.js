@@ -23,7 +23,7 @@ function Science() {
                 science.map((s, i) => {
                     const {
                         title,
-                        urlToImage,
+                        image,
                         description,
                         publishedAt,
                         source = [],
@@ -34,7 +34,7 @@ function Science() {
                         <NewsCard
                             key={i}
                             title={title}
-                            urlToImage={urlToImage}
+                            image={image}
                             description={description}
                             url={url}
                             publishedAt={publishedAt}

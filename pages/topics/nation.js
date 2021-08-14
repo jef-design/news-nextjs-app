@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
-import { fetchSearch } from "../../store/actions/searchAction";
+import { fetchNation } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from 'next/head'
+import Head from "next/head";
+import HeaderPage from "../../components/Helper/HeaderPage";
 
-function SearchResult() {
+function Nation() {
     const dispatch = useDispatch();
-    const query = useSelector(state => state.search.query)
-    const search = useSelector(state => state.search.searchnews);
-
+    const nation = useSelector(state => state.fetchnews.nation);
 
     useEffect(() => {
-        dispatch(fetchSearch(query));
-    }, [dispatch,query]);
+        dispatch(fetchNation());
+    }, [dispatch]);
     return (
         <section>
             <Head>
-                <title>Google News - Search - {query}</title>
+                <title>Google News - Nation</title>
             </Head>
-
-            {search &&
-                search.map((b, i) => {
+            <HeaderPage pageimage="https://lh3.googleusercontent.com/proxy/sNEGkuBnnFMGXpdk3R0U5_cXyLenzaUW1xT688HJLvr5OuYUChtcXWUha4kACeC2oiFGwXdmG33Ui_6rIY2f7yh5NTMfHNg5FVXnMHbm2SvCb078LuEsuGLO6zokwrO-u8DtID25KNhcbQWihrJ1PXDXm2DKK7-qKLz0JFTBaMquyyc=rw-p" pagetitle="Nation" iconcolor="bg-nation" />
+            {nation &&
+                nation.map((nations, i) => {
                     const {
                         title,
                         image,
@@ -29,7 +28,7 @@ function SearchResult() {
                         source = [],
                         url,
                         content,
-                    } = b;
+                    } = nations;
                     return (
                         <NewsCard
                             key={i}
@@ -44,7 +43,7 @@ function SearchResult() {
                     );
                 })}
         </section>
-    )
+    );
 }
 
-export default SearchResult
+export default Nation;

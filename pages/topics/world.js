@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
-import { fetchSearch } from "../../store/actions/searchAction";
+import { fetchWorld } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from 'next/head'
+import Head from "next/head";
+import HeaderPage from "../../components/Helper/HeaderPage";
 
-function SearchResult() {
+function World() {
     const dispatch = useDispatch();
-    const query = useSelector(state => state.search.query)
-    const search = useSelector(state => state.search.searchnews);
-
+    const world = useSelector(state => state.fetchnews.world);
 
     useEffect(() => {
-        dispatch(fetchSearch(query));
-    }, [dispatch,query]);
+        dispatch(fetchWorld());
+    }, [dispatch]);
     return (
         <section>
             <Head>
-                <title>Google News - Search - {query}</title>
+                <title>Google News - World</title>
             </Head>
-
-            {search &&
-                search.map((b, i) => {
+            <HeaderPage pageimage="https://lh3.ggpht.com/MMoPETUaDbUB1bO3KAi3cKQ_lzssju3VEp9ZPauGIamgSniMr4nV2SVkVvG-rKUJSLQJP84q7EA=rw-p" pagetitle="World" iconcolor="bg-world" />
+            {world &&
+                world.map((worlds, i) => {
                     const {
                         title,
                         image,
@@ -29,7 +28,7 @@ function SearchResult() {
                         source = [],
                         url,
                         content,
-                    } = b;
+                    } = worlds;
                     return (
                         <NewsCard
                             key={i}
@@ -44,7 +43,7 @@ function SearchResult() {
                     );
                 })}
         </section>
-    )
+    );
 }
 
-export default SearchResult
+export default World;

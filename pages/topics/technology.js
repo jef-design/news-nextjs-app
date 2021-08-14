@@ -25,7 +25,7 @@ function Technology() {
                 technology.map((tech, i) => {
                     const {
                         title,
-                        urlToImage,
+                        image,
                         description,
                         publishedAt,
                         source = [],
@@ -36,7 +36,7 @@ function Technology() {
                         <NewsCard
                             key={i}
                             title={title}
-                            urlToImage={urlToImage}
+                            image={image}
                             description={description}
                             url={url}
                             publishedAt={publishedAt}

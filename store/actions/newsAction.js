@@ -17,7 +17,7 @@ export const fetchTopHeadlines = () =>{
 
 export const fetchSports = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchSports)
+    const response = await axios.request(request.fetchSports)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_SPORTS,
       payload: response.data.articles})
@@ -27,7 +27,7 @@ export const fetchSports = () =>{
 
 export const fetchBusiness = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchBusiness)
+    const response = await axios.request(request.fetchBusiness)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_BUSINESS,
       payload: response.data.articles})
@@ -36,7 +36,7 @@ export const fetchBusiness = () =>{
 }
 export const fetchEntertainment = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchEntertainment)
+    const response = await axios.request(request.fetchEntertainment)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_ENTERTAINMENT,
       payload: response.data.articles})
@@ -45,7 +45,7 @@ export const fetchEntertainment = () =>{
 }
 export const fetchHealth = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchHealth)
+    const response = await axios.request(request.fetchHealth)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_HEALTH,
       payload: response.data.articles})
@@ -54,7 +54,7 @@ export const fetchHealth = () =>{
 }
 export const fetchScience = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchScience)
+    const response = await axios.request(request.fetchScience)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_SCIENCE,
       payload: response.data.articles})
@@ -63,7 +63,7 @@ export const fetchScience = () =>{
 }
 export const fetchTechnology = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchTechnology)
+    const response = await axios.request(request.fetchTechnology)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_TECHNOLOGY,
       payload: response.data.articles})

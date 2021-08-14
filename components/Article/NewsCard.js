@@ -42,7 +42,7 @@ function NewsCard({
                                 alt=""
                                 className="w-full rounded-lg"
                             /> */}
-                            <p>{image}</p>
+                            {/* <p>{image}</p> */}
                         </div>
                     </div>
                     <div className="my-2">

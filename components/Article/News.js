@@ -30,17 +30,17 @@ function News() {
                 <p>Here&apos;s what you need to know.</p>
             </div>
             {topheadlines && topheadlines.map((headlines, i) => {
-                const {title,published,source=[],link} = headlines;
+                const {title,image,description,publishedAt,source=[],url,content} = headlines;
                 return(
                    <NewsCard
                    key={i}
                    title={title}
-                //    urlToImage={urlToImage}
-                //    description={description}
-                   link={link}
-                   published={published}
+                   image={image}
+                   description={description}
+                   url={url}
+                   publishedAt={publishedAt}
                    source={source}
-                //    content={content}
+                   content={content}
                    />
 
                 )

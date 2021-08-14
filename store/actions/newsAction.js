@@ -1,13 +1,13 @@
 import { ActionTypes} from '../constants/types';
 import request from '../../pages/api/request';
-// import axios from '../../pages/api/axios';
-import axios from "axios";
+import axios from '../../pages/api/axios';
+// import axios from "axios";
 
 
 
 export const fetchTopHeadlines = () =>{
    return async function(dispatch) {
-    const response = await axios.request(request.fetchTopHeadlines)
+    const response = await axios.get(request.fetchTopHeadlines)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_TOP_HEADLINES,
    payload: response.data.articles})

@@ -42,7 +42,7 @@ function NewsCard({
                                 </p>
                             </div>
                         </div>
-                        <div className="pl-2 text max-w-[200px] sm:max-w-[110px]">
+                        <div className="pl-2 text max-w-[200px] sm:min-w-[120px]">
                             <Image
                                 loader={myLoader}
                                 src={image}

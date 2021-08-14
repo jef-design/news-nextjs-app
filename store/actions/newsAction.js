@@ -1,14 +1,16 @@
 import { ActionTypes} from '../constants/types';
 import request from '../../pages/api/request';
-import axios from '../../pages/api/axios';
+// import axios from '../../pages/api/axios';
+import axios from "axios";
 
 
 
 export const fetchTopHeadlines = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchTopHeadlines)
+    const response = await axios.request(request.fetchTopHeadlines)
+    console.log(response)
     dispatch({type: ActionTypes.FETCH_TOP_HEADLINES,
-        payload: response.data.articles})
+   payload: response.data.articles})
    }
 
 }
@@ -18,7 +20,7 @@ export const fetchSports = () =>{
     const response = await axios.get(request.fetchSports)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_SPORTS,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }
@@ -28,7 +30,7 @@ export const fetchBusiness = () =>{
     const response = await axios.get(request.fetchBusiness)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_BUSINESS,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }
@@ -37,7 +39,7 @@ export const fetchEntertainment = () =>{
     const response = await axios.get(request.fetchEntertainment)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_ENTERTAINMENT,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }
@@ -46,7 +48,7 @@ export const fetchHealth = () =>{
     const response = await axios.get(request.fetchHealth)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_HEALTH,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }
@@ -55,7 +57,7 @@ export const fetchScience = () =>{
     const response = await axios.get(request.fetchScience)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_SCIENCE,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }
@@ -64,7 +66,7 @@ export const fetchTechnology = () =>{
     const response = await axios.get(request.fetchTechnology)
     console.log(response)
     dispatch({type: ActionTypes.FETCH_TECHNOLOGY,
-        payload: response.data.articles})
+      payload: response.data.articles})
    }
 
 }

@@ -4,17 +4,15 @@ import Image from "next/image";
 import Head from "next/head";
 
 function NewsCard({
-    urlToImage,
+   
     title,
-    url,
-    publishedAt,
+    link,
+    published,
     source = [],
-    description,
-    content,
 }) {
     return (
         <>
-            <Link href={url} passHref={true}>
+            <Link href={link} passHref={true}>
                 <div className="p-3 border border-gray-300 rounded-lg cursor-pointer mb-6 group sm:text-sm">
                     <div className="flex justify-between">
                         <div className="pr-3 peer">
@@ -32,7 +30,7 @@ function NewsCard({
                                     })}
 
                                 <p>
-                                    <ReactTimeAgo date={publishedAt} />
+                                    <ReactTimeAgo date={published} />
                                 </p>
                             </div>
                         </div>
@@ -42,11 +40,11 @@ function NewsCard({
                                 alt=""
                                 className="w-full rounded-lg"
                             /> */}
-                            <p>{urlToImage}</p>
+                            {/* <p>{urlToImage}</p> */}
                         </div>
                     </div>
                     <div className="my-2">
-                        <p>{description}</p>
+                        {/* <p>{description}</p> */}
                     </div>
                 </div>
             </Link>

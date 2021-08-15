@@ -1,16 +1,15 @@
-import React,{useState,useEffect,useRef} from 'react'
+import React,{useState,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { SearchIcon,ArrowLeftIcon } from "@heroicons/react/solid";
 import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'
 
 
-function Search({isSearch,setIsSearch,searchInput}) {
-   
-    console.log(searchInput)
+const Search = React.forwardRef(({_ref,isSearch,setIsSearch, ...props}) => {
+    console.log(_ref)
     const router = useRouter()
     const dispatch = useDispatch()
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState("")
     
     const SearchQuery = (e) => {
         setQuery(e.target.value)
@@ -26,7 +25,7 @@ function Search({isSearch,setIsSearch,searchInput}) {
           window.addEventListener('resize', resizeHandler);
         }
         else{
-            setIsSearch(true)
+            setIsSearch(false)
         }
          
 
@@ -56,7 +55,8 @@ function Search({isSearch,setIsSearch,searchInput}) {
                     <SearchIcon className="w-7 h-6 sm:hidden" />
                     <ArrowLeftIcon onClick={()=>{setIsSearch(!isSearch)}} className="w-7 h-6 hidden cursor-pointer hover:rounded-full sm:block" />
                     <input
-                        ref={searchInput}
+                        ref={_ref}
+                        type="text"
                         placeholder="Search for topics,location & sources"
                         className="w-full ml-3 outline-none bg-transparent"
                         onChange={SearchQuery}
@@ -65,6 +65,6 @@ function Search({isSearch,setIsSearch,searchInput}) {
                 </div>
             </form>
     )
-}
+})
 
-export default Search
+export default Search;

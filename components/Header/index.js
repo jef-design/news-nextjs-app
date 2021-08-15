@@ -11,14 +11,14 @@ const Header = ({toggle}) => {
     const [session] = useSession();
     const [isOpen,setIsOpen] = useState(false)
     const [isSearch,setIsSearch] = useState(false)
-    const searchInput = useRef("")
+    const inputRef = useRef(null)
 
     const setSearchfunc = () => {
         setIsSearch(!isSearch)
     }
     const handleFocus = () => {
-        searchInput.current.focus();
-        // console.log(searchInput)
+        inputRef.current.focus();
+        console.log(inputRef)
       }
 
    
@@ -38,7 +38,7 @@ const Header = ({toggle}) => {
                 </Link>
             </div>
        
-            <Search isSearch={isSearch} setIsSearch={setIsSearch} searchInput={searchInput} />
+            <Search _ref={inputRef} isSearch={isSearch} setIsSearch={setIsSearch}/>
          
             <div className="flex items-center space-x-2">
                 <div className="hover:bg-gray-100 rounded-full p-2 cursor-pointer">

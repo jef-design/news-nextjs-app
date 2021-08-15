@@ -5,7 +5,7 @@ import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'
 
 
-const Search = React.forwardRef(({isSearch,setIsSearch}) => {
+const Search = ({isSearch,setIsSearch}) => {
     console.log(_ref)
     const router = useRouter()
     const dispatch = useDispatch()
@@ -65,6 +65,5 @@ const Search = React.forwardRef(({isSearch,setIsSearch}) => {
                 </div>
             </form>
     )
-})
-
+}
 export default Search;

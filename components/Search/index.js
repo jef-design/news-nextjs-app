@@ -6,7 +6,7 @@ import {useRouter} from 'next/router'
 
 
 const Search = ({isSearch,setIsSearch}) => {
-    console.log(_ref)
+
     const router = useRouter()
     const dispatch = useDispatch()
     const [query, setQuery] = useState("")

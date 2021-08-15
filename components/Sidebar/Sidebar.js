@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
 
 function Sidebar({ isOpen, toggle,setIsOpen }) {
     const router = useRouter();
-    let accountMenu = useRef();
+    let refMenu = useRef();
 
     useEffect(() => {
         const resizeHandler = () =>{
@@ -39,7 +39,7 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
 
       useEffect(() => {
         let handler = (event) => {
-           if(!accountMenu.current.contains(event.target)) {
+           if(!refMenu.current.contains(event.target)) {
                setIsOpen(false);
            }
        }
@@ -53,10 +53,10 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
     
     return (
         <div
-        ref={accountMenu}
+        ref={refMenu}
             isOpen={isOpen}
-            // onClick={toggle}
-            className="transition-all ease-linear duration-200 min-w-[260px] h-screen bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20"
+            onClick={toggle}
+            className="transition-all ease-linear duration-200 min-w-[260px] h-screen bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20 lg:left-[-350px]"
             style={{ left: isOpen ? "0px" : "-350px" }}
         >
             <Link href="/" passHref={true}>

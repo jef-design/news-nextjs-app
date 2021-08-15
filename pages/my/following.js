@@ -9,8 +9,8 @@ function Following() {
                 <title>Google News - Following</title>
             </Head>
             <div className="mb-4">
-                <ul className="text-lg flex">
-                    <li className="mr-4">Topics & Sources</li>
+                <ul className="text-lg flex border-b-2 pb-2">
+                    <li className="mr-4 text-blue-600">Topics & Sources</li>
                     <li className="mr-4">Saved searches</li>
                     <li>Saved stories</li>
                 </ul>

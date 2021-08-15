@@ -15,10 +15,7 @@ function Home({ session }) {
                 <meta name="description" content="Google News" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
- 
             <News />
-
-            
         </div>
     );
 }

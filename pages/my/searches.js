@@ -8,9 +8,9 @@ function Searches() {
                 <title>Google News - Saved searches</title>
             </Head>
             <div className="mb-4">
-                <ul className="text-lg flex">
+                <ul className="text-lg flex border-b-2 pb-2">
                     <li className="mr-4">Topics & Sources</li>
-                    <li className="mr-4">Saved searches</li>
+                    <li className="mr-4 text-blue-600">Saved searches</li>
                     <li>Saved stories</li>
                 </ul>
             </div>

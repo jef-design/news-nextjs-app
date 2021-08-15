@@ -11,13 +11,14 @@ const Header = ({toggle}) => {
     const [session] = useSession();
     const [isOpen,setIsOpen] = useState(false)
     const [isSearch,setIsSearch] = useState(false)
-    const searchInput = useRef(null)
+    const searchInput = useRef("")
 
     const setSearchfunc = () => {
         setIsSearch(!isSearch)
     }
     const handleFocus = () => {
         searchInput.current.focus();
+        // console.log(searchInput)
       }
 
    

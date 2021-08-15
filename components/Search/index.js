@@ -6,6 +6,8 @@ import {useRouter} from 'next/router'
 
 
 function Search({isSearch,setIsSearch,searchInput}) {
+   
+    console.log(searchInput)
     const router = useRouter()
     const dispatch = useDispatch()
     const [query, setQuery] = useState('')
@@ -54,10 +56,11 @@ function Search({isSearch,setIsSearch,searchInput}) {
                     <SearchIcon className="w-7 h-6 sm:hidden" />
                     <ArrowLeftIcon onClick={()=>{setIsSearch(!isSearch)}} className="w-7 h-6 hidden cursor-pointer hover:rounded-full sm:block" />
                     <input
+                        ref={searchInput}
                         placeholder="Search for topics,location & sources"
                         className="w-full ml-3 outline-none bg-transparent"
                         onChange={SearchQuery}
-                        ref={searchInput}
+
                     />
                 </div>
             </form>

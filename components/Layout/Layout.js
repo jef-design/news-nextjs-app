@@ -1,9 +1,12 @@
 import React,{ useState } from 'react';
+import { useSession } from "next-auth/client";
 import Header from "../Header";
 import SideBar from "../Sidebar/Sidebar";
+import Login from '../Login/Login';
 
 
 export default function Layout({ children}) {
+    // const [session] = useSession();
    
     const [isOpen,setIsOpen] = useState(true)
 
@@ -11,6 +14,7 @@ export default function Layout({ children}) {
         setIsOpen(!isOpen)
         // console.log(isOpen)
     }
+    // if (!session) return <Login />;
     return (
         <div>
             <Header toggle={toggle} />

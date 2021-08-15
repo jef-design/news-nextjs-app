@@ -5,7 +5,7 @@ import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'
 
 
-const Search = React.forwardRef(({_ref,isSearch,setIsSearch, ...props}) => {
+const Search = React.forwardRef(({props, _ref,isSearch,setIsSearch}) => {
     console.log(_ref)
     const router = useRouter()
     const dispatch = useDispatch()

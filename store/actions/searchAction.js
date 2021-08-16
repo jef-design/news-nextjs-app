@@ -2,6 +2,7 @@ import { ActionTypes} from '../constants/types';
 // import axios from '../../pages/api/axios';
 import axios from 'axios';
 
+const token = process.env.NEWS_API_KEY
 
 export const fetchSearch = (query) =>{
    return async function(dispatch) {
@@ -9,7 +10,7 @@ export const fetchSearch = (query) =>{
             dispatch({
                type: ActionTypes.FETCH_IS_LOADING
              });
-             const response = await axios.get(`https://gnews.io/api/v4/search?q=${query}&token=908b0f673ea2041b48812d91f7cb131c`)
+             const response = await axios.get(`https://gnews.io/api/v4/search?q=${query}&token=${token}`)
              dispatch({type: ActionTypes.FETCH_SEARCH,
                  payload: response.data.articles})
           } catch (error) {

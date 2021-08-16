@@ -39,7 +39,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // require('tailwind-scrollbar'),
+  ],
   rules: {
     'at-rule-no-unknown': [true, {
       ignoreAtRules: [

@@ -56,7 +56,7 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
         ref={refMenu}
             isOpen={isOpen}
             onClick={toggle}
-            className="transition-all ease-linear duration-200 min-w-[260px] h-screen hover:overflow-y-scroll bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20 lg:left-[-350px]"
+            className="transition-all ease-linear duration-200 min-w-[260px] hover:scrollbar h-screen hover:overflow-y-scroll bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20 lg:left-[-350px]"
             style={{ left: isOpen ? "0px" : "-350px" }}
         >
             <Link href="/" passHref={true}>
@@ -111,7 +111,7 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
                 href="/topics/science"
             />
             <SidebarRow Icon={HeartIcon} name="Health" href="/topics/health" />
-            <div className="space-y-3 px-6 py-2">
+            <div className="space-y-5 px-6 py-2">
             <p>Language & region</p>
             <p>Settings</p>
             <p>Get the Andriod app</p>

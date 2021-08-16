@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
 import Head from "next/head";
 import HeaderPage from "../../components/Helper/HeaderPage";
+import Loader from "../../components/Loader";
 
 function World() {
     const dispatch = useDispatch();
     const world = useSelector(state => state.fetchnews.world);
-
+    const loading = useSelector(state => state.miscloading.loading)
     useEffect(() => {
         dispatch(fetchWorld());
     }, [dispatch]);
@@ -30,7 +31,8 @@ function World() {
                         content,
                     } = worlds;
                     return (
-                        <NewsCard
+                       <>
+                         {loading ? <Loader/> : <NewsCard
                             key={i}
                             title={title}
                             image={image}
@@ -39,7 +41,8 @@ function World() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />
+                        />}
+                       </>
                     );
                 })}
         </section>

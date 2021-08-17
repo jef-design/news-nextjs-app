@@ -18,10 +18,31 @@ module.exports = {
       fontFamily:{
         'sans': ['Roboto', 'sans-serif'],
       },
+      animation: {
+        shimmer: 'shimmer 2s ease-in-out infinite',
+       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+        shimmer: {
+          '0% ':{
+            left:'0%;',
+            right:'100%',
+            width:'5%',
+          },
+          '10%': {
+            left:'0%',
+            right:'75%',
+            width:'60%',
+          },
+          '90%': {
+            right:'0%',
+            left:'75%',
+            width:'60%',
+          },
+          '100% ':{
+            left:'100%',
+            right:'0%',
+            width:'0%',
+          }
         }
        }
       

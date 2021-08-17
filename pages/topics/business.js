@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { fetchBusiness } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from "next/head";
 import HeaderPage from "../../components/Helper/HeaderPage";
 import Meta from "../../components/Meta/Meta";
 import Loader from "../../components/Loader";
@@ -48,6 +47,7 @@ function Business() {
                             source={source}
                             content={content}
                         />}
+                        
                        </>
                     );
                 })}

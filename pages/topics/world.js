@@ -31,7 +31,7 @@ function World() {
                         content,
                     } = worlds;
                     return (
-                       <>
+                        <>
                          {loading ? <Loader/> : 
                          <NewsCard
                             key={i}
@@ -42,7 +42,7 @@ function World() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />}
+                        />}                
                        </>
                     );
                 })}

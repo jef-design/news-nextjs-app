@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
 import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
+import Loader from "../../components/Loader";
 
 function Health() {
     const dispatch = useDispatch();
     const health = useSelector(state => state.fetchnews.health);
+    const loading = useSelector(state => state.miscloading.loading)
 
     useEffect(() => {
         dispatch(fetchHealth());
@@ -31,7 +33,9 @@ function Health() {
                         content,
                     } = h;
                     return (
-                        <NewsCard
+                        <>
+                         {loading ? <Loader/> : 
+                         <NewsCard
                             key={i}
                             title={title}
                             image={image}
@@ -40,7 +44,9 @@ function Health() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />
+                        />}
+                        
+                       </>
                     );
                 })}
         </section>

@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
 import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
+import Loader from "../../components/Loader";
 
 function Science() {
     const dispatch = useDispatch();
     const science = useSelector(state => state.fetchnews.science);
+    const loading = useSelector(state => state.miscloading.loading)
 
     useEffect(() => {
         dispatch(fetchScience());
@@ -31,16 +33,20 @@ function Science() {
                         content,
                     } = s;
                     return (
+                        <>
+                        {loading ? <Loader/> : 
                         <NewsCard
-                            key={i}
-                            title={title}
-                            image={image}
-                            description={description}
-                            url={url}
-                            publishedAt={publishedAt}
-                            source={source}
-                            content={content}
-                        />
+                           key={i}
+                           title={title}
+                           image={image}
+                           description={description}
+                           url={url}
+                           publishedAt={publishedAt}
+                           source={source}
+                           content={content}
+                       />}
+                       
+                      </>
                     );
                 })}
         </section>

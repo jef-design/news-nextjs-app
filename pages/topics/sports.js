@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
 import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
+import Loader from "../../components/Loader";
 
 function Sports() {
     const dispatch = useDispatch();
     const sports = useSelector(state => state.fetchnews.sports);
+    const loading = useSelector(state => state.miscloading.loading)
 
     useEffect(() => {
         dispatch(fetchSports());
@@ -30,16 +32,20 @@ function Sports() {
                         content,
                     } = sport;
                     return (
+                        <>
+                        {loading ? <Loader/> : 
                         <NewsCard
-                            key={i}
-                            title={title}
-                            image={image}
-                            description={description}
-                            url={url}
-                            publishedAt={publishedAt}
-                            source={source}
-                            content={content}
-                        />
+                           key={i}
+                           title={title}
+                           image={image}
+                           description={description}
+                           url={url}
+                           publishedAt={publishedAt}
+                           source={source}
+                           content={content}
+                       />}
+                       
+                      </>
                     );
                 })}
         </section>

@@ -17,7 +17,7 @@ export default function Layout({ children }) {
     // if (!session) return <Login />;
     return (
         <>
-        <Meta title="goolgenews" />
+        <Meta />
             <div>
                 <Header toggle={toggle} />
                 <SideBar

@@ -5,10 +5,12 @@ import NewsCard from "../../components/Article/NewsCard";
 import Head from "next/head";
 import HeaderPage from "../../components/Helper/HeaderPage";
 import Meta from "../../components/Meta/Meta";
+import Loader from "../../components/Loader";
 
 function Business() {
     const dispatch = useDispatch();
     const business = useSelector(state => state.fetchnews.business);
+    const loading = useSelector(state => state.miscloading.loading)
 
 
     useEffect(() => {
@@ -34,7 +36,9 @@ function Business() {
                         content,
                     } = b;
                     return (
-                        <NewsCard
+                        <>
+                         {loading ? <Loader/> : 
+                         <NewsCard
                             key={i}
                             title={title}
                             image={image}
@@ -43,7 +47,8 @@ function Business() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />
+                        />}
+                       </>
                     );
                 })}
         </section>

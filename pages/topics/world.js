@@ -32,7 +32,8 @@ function World() {
                     } = worlds;
                     return (
                        <>
-                         {loading ? <Loader/> : <NewsCard
+                         {loading ? <Loader/> : 
+                         <NewsCard
                             key={i}
                             title={title}
                             image={image}

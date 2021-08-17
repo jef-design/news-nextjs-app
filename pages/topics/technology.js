@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import { fetchTechnology } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from "next/head";
-import { StarIcon } from '@heroicons/react/outline'
-import { ShareIcon } from '@heroicons/react/solid'
+import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
 
 function Technology() {
@@ -16,9 +14,9 @@ function Technology() {
     }, [dispatch]);
     return (
         <section>
-            <Head>
-                <title>Google News - Technology</title>
-            </Head>
+            <Meta title="Google News - Technology"
+            image="https://lh4.ggpht.com/0JsT7seg_L1MnpCuWZvJ6CJCHpkCawqEMdOr8Iw_NWjNUyTqWZJZNDbfa6kUGg-q1KN4FiUPaw=p-rw"
+            description="Read full articles, browse thousand of titles and more on the Technology topic with Google News" />
             <HeaderPage pageimage="https://lh4.ggpht.com/0JsT7seg_L1MnpCuWZvJ6CJCHpkCawqEMdOr8Iw_NWjNUyTqWZJZNDbfa6kUGg-q1KN4FiUPaw=p-rw" pagetitle="Technology" iconcolor="bg-technology" />
 
             {technology &&

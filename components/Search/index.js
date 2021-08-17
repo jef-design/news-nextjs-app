@@ -5,7 +5,7 @@ import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'
 
 
-const Search = ({isSearch,setIsSearch,ref}) => {
+const Search = ({isSearch,setIsSearch,props, inputRef}) => {
 
     const router = useRouter()
     const dispatch = useDispatch()
@@ -39,7 +39,7 @@ const Search = ({isSearch,setIsSearch,ref}) => {
                     <SearchIcon className="w-7 h-6 sm:hidden" />
                     <ArrowLeftIcon onClick={()=>{setIsSearch(!isSearch)}} className="w-7 h-6 hidden cursor-pointer hover:rounded-full sm:block" />
                     <input
-                       ref={ref}
+                       ref={inputRef}
                         type="text"
                         placeholder="Search for topics,location & sources"
                         className="w-full ml-3 outline-none bg-transparent"

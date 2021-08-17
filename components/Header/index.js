@@ -37,7 +37,7 @@ const Header = ({toggle}) => {
                 </Link>
             </div>
        
-            <Search ref={inputRef} isSearch={isSearch} setIsSearch={setIsSearch}/>
+            <Search inputRef={inputRef} isSearch={isSearch} setIsSearch={setIsSearch}/>
          
             <div className="flex items-center space-x-2">
                 <div className="hover:bg-gray-100 rounded-full p-2 cursor-pointer">

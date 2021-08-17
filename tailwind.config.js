@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors:{
+        'gray-prim': '#3c4043',
         'business': '#1e8e3e',
         'technology': '#1bb3c8',
         'entertainment': '#8430c3',

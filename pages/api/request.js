@@ -1,5 +1,4 @@
 const API_KEY = process.env.NEWS_API_KEY
-console.log(API_KEY)
 
 const request = {
     fetchTopHeadlines :`top-headlines?country=ph&token=${API_KEY}`,

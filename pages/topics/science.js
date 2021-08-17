@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { fetchScience } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from "next/head";
+import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
 
 function Science() {
@@ -14,9 +14,9 @@ function Science() {
     }, [dispatch]);
     return (
         <section>
-            <Head>
-                <title>Google News - Science</title>
-            </Head>
+            <Meta title="Google News - Science"
+            image="https://lh6.ggpht.com/fJKuBX6iUFA_nPU2_2bIXcrTf3osSPhgBCL0sGqR2pZo-P6uZpiSmHW098W4I-CQHmsxZBd4=p-rw"
+            description="Read full articles, browse thousand of titles and more on the Science topic with Google News" />
             <HeaderPage pageimage="https://lh6.ggpht.com/fJKuBX6iUFA_nPU2_2bIXcrTf3osSPhgBCL0sGqR2pZo-P6uZpiSmHW098W4I-CQHmsxZBd4=p-rw" pagetitle="Science" iconcolor="bg-science" />
 
             {science &&

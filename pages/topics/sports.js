@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { fetchSports } from "../../store/actions/newsAction";
 import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
-import Head from "next/head";
+import Meta from "../../components/Meta/Meta";
 import HeaderPage from "../../components/Helper/HeaderPage";
 
 function Sports() {
@@ -14,9 +14,9 @@ function Sports() {
     }, [dispatch]);
     return (
         <section>
-            <Head>
-                <title>Google News - Sports</title>
-            </Head>
+            <Meta title="Google News - Sports"
+            image="https://lh4.ggpht.com/NyQryeBboxLw72N3_3mAHBYMuWlMaZ1RJHGRdF30RDICgv2-9Jupc2GzY2XeVdgaV3nbNaXb=p-rw"
+            description="Read full articles, browse thousand of titles and more on the Sports topic with Google News" />
             <HeaderPage pageimage="https://lh4.ggpht.com/NyQryeBboxLw72N3_3mAHBYMuWlMaZ1RJHGRdF30RDICgv2-9Jupc2GzY2XeVdgaV3nbNaXb=p-rw" pagetitle="Sports" iconcolor="bg-sports" />
             {sports &&
                 sports.map((sport, i) => {

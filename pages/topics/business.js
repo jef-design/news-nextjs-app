@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Article/NewsCard";
 import Head from "next/head";
 import HeaderPage from "../../components/Helper/HeaderPage";
+import Meta from "../../components/Meta/Meta";
 
 function Business() {
     const dispatch = useDispatch();
@@ -15,9 +16,10 @@ function Business() {
     }, [dispatch]);
     return (
         <section>
-            <Head>
-                <title>Google News - Business</title>
-            </Head>
+            <Meta title="Google News - Business" 
+            image="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"
+            description="Read full articles, browse thousand of titles and more on the Business topic with Google News"
+             />
             <HeaderPage pageimage="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"  pagetitle="Business" iconcolor="bg-business" />
 
             {business &&

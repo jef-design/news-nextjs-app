@@ -9,20 +9,18 @@ import ru from "javascript-time-ago/locale/ru";
 import NProgress from "nprogress";
 import Head from "next/head";
 import Router from "next/router";
+TimeAgo.addDefaultLocale(en);
+TimeAgo.addLocale(ru);
 
-NProgress.configure({showSpinner: false});
-Router.onRouteChangeStart = url => {
+function MyApp({ Component, pageProps }) {
+  NProgress.configure({showSpinner: false});
+  Router.onRouteChangeStart = url => {
     NProgress.start();
 };
 
 Router.onRouteChangeComplete = () => NProgress.done();
 
 Router.onRouteChangeError = () => NProgress.done();
-
-TimeAgo.addDefaultLocale(en);
-TimeAgo.addLocale(ru);
-
-function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>

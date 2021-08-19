@@ -28,7 +28,7 @@ const Search = React.forwardRef(({isSearch,setIsSearch},ref) => {
             setIsSearch(true)
         }
         return () => window.removeEventListener('resize', resizeHandler);
-      }, []);
+      }, [setIsSearch]);
       const resizeHandler = () => {
         setIsSearch(false)
       }
@@ -50,6 +50,7 @@ const Search = React.forwardRef(({isSearch,setIsSearch},ref) => {
             </form>
     )
 })
+Search.displayName = "Search";
 export default Search;
 
 

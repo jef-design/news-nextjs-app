@@ -1,4 +1,4 @@
-import React,{useRef,useState} from 'react'
+import React,{useRef,useState,useEffect} from 'react'
 import Link from "next/link";
 import { MenuIcon, SearchIcon } from "@heroicons/react/solid";
 import { useSession } from "next-auth/client";
@@ -10,21 +10,33 @@ import Image from 'next/image'
 const Header = ({toggle}) => {
     const [session] = useSession();
     const [accountOpen,setAccountOpen] = useState(false)
-    const [isSearch,setIsSearch] = useState(false)
+    const [openSearch,setOpenSearch] = useState(false)
     const inputRef = useRef("")
 
     const setSearchfunc = () => {
-        setIsSearch(!isSearch)
+        setOpenSearch(!openSearch)
     }
     const handleFocus = () => {
         inputRef.current.focus();
       }
+      useEffect(() => {
+        const resizeHandler = () =>{
+            if (window.innerWidth > 768) {
+                setOpenSearch(false)
+              }
+              else if(window.innerWidth < 768){
+                setOpenSearch(false)
+              }
+        };
+        window.addEventListener('resize', resizeHandler);
 
+        return () => window.removeEventListener('resize', resizeHandler);
+      }, []);
    
     return (
         <header className="border-b-2 px-4 py-2 text-gray-500 shadow-lg fixed top-0 left-0 right-0 z-20 bg-white">
             <div className="flex justify-between items-center relative">
-            <div style={{display: isSearch ? 'none' : ""}} className="flex items-center space-x-3">
+            <div style={{display: openSearch ? 'none' : ""}} className="flex items-center space-x-3">
                 <div className="h-8 w-8 hover:bg-gray-100 rounded-full p-1">
                     <MenuIcon onClick={toggle} className="h-5 w-5 cursor-pointer" />
                 </div>
@@ -37,11 +49,11 @@ const Header = ({toggle}) => {
                 </Link>
             </div>
        
-            <Search isSearch={isSearch} setIsSearch={setIsSearch} ref={inputRef}  />
+            <Search openSearch={openSearch} setOpenSearch={setOpenSearch} ref={inputRef}  />
          
             <div className="flex items-center space-x-2">
                 <div className="hover:bg-gray-100 rounded-full p-2 cursor-pointer">
-                <SearchIcon style={{display: isSearch ? 'none' : ""}} onClick={()=>{setSearchfunc(); handleFocus();}} className="w-6 h-6 hidden sm:block" />
+                <SearchIcon style={{display: openSearch ? 'none' : ""}} onClick={()=>{setSearchfunc(); handleFocus();}} className="w-6 h-6 hidden sm:block" />
                 </div>
 
                 <div

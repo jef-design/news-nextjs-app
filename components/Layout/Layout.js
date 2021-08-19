@@ -1,20 +1,19 @@
 import React, { useState,useEffect } from "react";
-import { useSession } from "next-auth/client";
 import Header from "../Header";
 import SideBar from "../Sidebar/Sidebar";
 import Login from "../Login/Login";
 import Meta from "../Meta/Meta";
 
 export default function Layout({ children }) {
-    // const [session] = useSession();
+ 
 
     const [sideBarOpen, setsideBarOpen] = useState(true);
 
     const toggle = () => {
         setsideBarOpen(!sideBarOpen);
-        // console.log(isOpen)
+     
     };
-    // if (!session) return <Login />;
+
     useEffect(() => {
         const resizeHandler = () =>{
             if (window.innerWidth < 768) {

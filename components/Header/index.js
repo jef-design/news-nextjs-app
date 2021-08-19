@@ -53,7 +53,7 @@ const Header = ({toggle}) => {
          
             <div className="flex items-center space-x-2">
                 <div className="hover:bg-gray-100 rounded-full p-2 cursor-pointer">
-                <SearchIcon style={{display: openSearch ? 'none' : ""}} onClick={()=>{setSearchfunc(); handleFocus();}} className="w-6 h-6 hidden sm:block" />
+                <SearchIcon style={{display: openSearch ? 'none' : ""}} onClick={()=>{setSearchfunc()}} className="w-6 h-6 hidden sm:block" />
                 </div>
 
                 <div

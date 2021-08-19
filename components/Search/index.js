@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { SearchIcon,ArrowLeftIcon } from "@heroicons/react/solid";
 import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'

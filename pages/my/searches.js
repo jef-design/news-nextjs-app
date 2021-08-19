@@ -8,7 +8,7 @@ function Searches() {
                 <title>Google News - Saved searches</title>
             </Head>
             <div className="mb-4">
-                <ul className="text-lg flex border-b-2 pb-2 whitespace-nowrap overflow-hidden overflow-x-scroll">
+                <ul className="text-[17px] font-semibold text-gray-600 flex border-b-2 pb-2 whitespace-nowrap overflow-hidden overflow-x-scroll">
                     <li className="mr-4">Topics & Sources</li>
                     <li className="mr-4 text-blue-600">Saved searches</li>
                     <li>Saved stories</li>

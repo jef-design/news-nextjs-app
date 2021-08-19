@@ -19,23 +19,10 @@ import SidebarRow from "./SidebarRow";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 
-function Sidebar({ isOpen, toggle,setIsOpen }) {
+function Sidebar({  toggle,isOpen,setIsOpen }) {
     const router = useRouter();
     let refMenu = useRef();
 
-    useEffect(() => {
-        const resizeHandler = () =>{
-            if (window.innerWidth < 768) {
-                setIsOpen(false)
-              }
-              else if(window.innerWidth > 768){
-                  setIsOpen(true)
-              }
-        };
-        window.addEventListener('resize', resizeHandler);
-
-        return () => window.removeEventListener('resize', resizeHandler);
-      }, [setIsOpen]);
 
       useEffect(() => {
         let handler = (event) => {
@@ -54,10 +41,10 @@ function Sidebar({ isOpen, toggle,setIsOpen }) {
     return (
         <div
         ref={refMenu}
-            isOpen={isOpen}
+            // isOpen={isOpen}
             onClick={toggle}
-            className="transition-all ease-linear duration-200 min-w-[260px] hover:scrollbar h-screen hover:overflow-y-scroll bg-white fixed left-0 top-0 text-gray-500 lg:shadow-2xl lg:z-20 lg:left-[-350px]"
-            style={{ left: isOpen ? "0px" : "-350px" }}
+            className="side-bar lg:shadow-2xl lg:z-20 lg:left-[-350px]"
+            style={{ left: isOpen ? "0" : "-350px" }}
         >
             <Link href="/" passHref={true}>
                 <div className="flex items-center mb-8 px-6 py-1 mt-3">

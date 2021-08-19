@@ -14,6 +14,9 @@
     .active{
         @apply text-blue-600 bg-blue-100 rounded-r-3xl;
     }
+    .side-bar{
+        @apply transition-all ease-linear duration-200 min-w-[260px] hover:scrollbar h-screen hover:overflow-y-scroll bg-white fixed left-0 top-0 text-gray-500;
+    }
 }
 @layer utilities {
     .scrollbar {

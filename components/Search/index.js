@@ -5,7 +5,7 @@ import {searchQuery} from '../../store/actions/searchAction'
 import {useRouter} from 'next/router'
 
 
-const Search = ({isSearch,setIsSearch,props, inputRef}) => {
+const Search = React.forwardRef(({isSearch,setIsSearch},ref) => {
 
     const router = useRouter()
     const dispatch = useDispatch()
@@ -39,7 +39,7 @@ const Search = ({isSearch,setIsSearch,props, inputRef}) => {
                     <SearchIcon className="w-7 h-6 sm:hidden" />
                     <ArrowLeftIcon onClick={()=>{setIsSearch(!isSearch)}} className="w-7 h-6 hidden cursor-pointer hover:rounded-full sm:block" />
                     <input
-                       ref={inputRef}
+                       ref={ref}
                         type="text"
                         placeholder="Search for topics,location & sources"
                         className="w-full ml-3 outline-none bg-transparent"
@@ -49,8 +49,8 @@ const Search = ({isSearch,setIsSearch,props, inputRef}) => {
                 </div>
             </form>
     )
-}
-export default React.forwardRef(Search);
+})
+export default Search;
 
 
 

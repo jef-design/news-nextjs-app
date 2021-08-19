@@ -11,10 +11,6 @@ class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                 <meta charSet="utf-8" />
-                <meta
-                    name="viewport"
-                    content="initial-scale=1.0, width=device-width"
-                />
                 {/* <meta property="og:description" content="Comprehensive, up-to-date news coverage, aggregated from sources all over the world by Google News."/>
                 <meta property="twitter:description" content="Comprehensive, up-to-date news coverage, aggregated from sources all over the world by Google News."></meta>
                 <meta name="description" content="Comprehensive, up-to-date news coverage, aggregated from sources all over the world by Google News" /> */}

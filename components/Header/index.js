@@ -17,7 +17,7 @@ const Header = ({toggle}) => {
         setIsSearch(!isSearch)
     }
     const handleFocus = () => {
-        // inputRef.current.focus();
+        inputRef.current.focus();
       }
 
    
@@ -37,7 +37,7 @@ const Header = ({toggle}) => {
                 </Link>
             </div>
        
-            <Search inputRef={inputRef} isSearch={isSearch} setIsSearch={setIsSearch}/>
+            <Search isSearch={isSearch} setIsSearch={setIsSearch} ref={inputRef}  />
          
             <div className="flex items-center space-x-2">
                 <div className="hover:bg-gray-100 rounded-full p-2 cursor-pointer">

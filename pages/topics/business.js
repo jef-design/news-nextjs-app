@@ -11,7 +11,6 @@ function Business() {
     const business = useSelector(state => state.fetchnews.business);
     const loading = useSelector(state => state.miscloading.loading)
 
-
     useEffect(() => {
         dispatch(fetchBusiness());
     }, [dispatch]);

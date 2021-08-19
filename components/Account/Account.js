@@ -2,13 +2,13 @@ import React,{ useEffect,useRef } from 'react'
 import { useSession, signOut } from "next-auth/client";
 import Image from 'next/image'
 
-function Account({ isOpen,setIsOpen }) {
+function Account({ accountOpen,setAccountOpen }) {
     const [session] = useSession();
     let accountMenu = useRef();
     useEffect(() => {
          let handler = (event) => {
             if(!accountMenu.current.contains(event.target)) {
-                setIsOpen(false);
+                setAccountOpen(false);
             }
         }
 
@@ -17,12 +17,12 @@ function Account({ isOpen,setIsOpen }) {
         return () => {
             document.addEventListener("mousedown", handler)
         }
-    }, [setIsOpen])
+    }, [setAccountOpen])
 
     return (
         <div
         ref={accountMenu}
-            style={{ display: isOpen ? "block" : "none" }}
+            style={{ display: accountOpen ? "block" : "none" }}
             className="absolute text-black right-1 top-16 p-3 shadow-md border rounded-lg bg-white flex justify-center items-center flex-col min-w-[300px]"
         >
             <div className="flex justify-center items-center flex-col text-center">

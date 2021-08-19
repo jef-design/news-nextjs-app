@@ -8,20 +8,20 @@ import Meta from "../Meta/Meta";
 export default function Layout({ children }) {
     // const [session] = useSession();
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [sideBarOpen, setsideBarOpen] = useState(true);
 
     const toggle = () => {
-        setIsOpen(!isOpen);
+        setsideBarOpen(!sideBarOpen);
         // console.log(isOpen)
     };
     // if (!session) return <Login />;
     useEffect(() => {
         const resizeHandler = () =>{
             if (window.innerWidth < 768) {
-                setIsOpen(false)
+                setsideBarOpen(false)
               }
               else if(window.innerWidth > 768){
-                  setIsOpen(true)
+                setsideBarOpen(true)
               }
         };
         window.addEventListener('resize', resizeHandler);
@@ -34,8 +34,8 @@ export default function Layout({ children }) {
             <div>
                 <Header toggle={toggle} />
                 <SideBar
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
+                    sideBarOpen={sideBarOpen}
+                    setsideBarOpen={setsideBarOpen}
                     toggle={toggle}  
                 />
                 <main className="main max-w-[1023px] mx-auto p-4 mt-20 ml-64 lg:ml-0">

@@ -19,15 +19,18 @@ import SidebarRow from "./SidebarRow";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 
-function Sidebar({  toggle,isOpen,setIsOpen }) {
+function Sidebar({ toggle,sideBarOpen,setsideBarOpen }) {
     const router = useRouter();
     let refMenu = useRef();
 
 
       useEffect(() => {
+        if (window.innerWidth < 768) {
+            setsideBarOpen(false)
+          }
         let handler = (event) => {
            if(!refMenu.current.contains(event.target)) {
-               setIsOpen(false);
+            setsideBarOpen(false);
            }
        }
 
@@ -36,7 +39,7 @@ function Sidebar({  toggle,isOpen,setIsOpen }) {
        return () => {
            document.addEventListener("mousedown", handler)
        }
-   }, [setIsOpen])
+   }, [setsideBarOpen])
     
     return (
         <div
@@ -44,7 +47,7 @@ function Sidebar({  toggle,isOpen,setIsOpen }) {
             // isOpen={isOpen}
             onClick={toggle}
             className="side-bar lg:shadow-2xl lg:z-20 lg:left-[-350px]"
-            style={{ left: isOpen ? "0" : "-350px" }}
+            style={{ left: sideBarOpen ? "0" : "-350px" }}
         >
             <Link href="/" passHref={true}>
                 <div className="flex items-center mb-8 px-6 py-1 mt-3">

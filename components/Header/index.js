@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 const Header = ({toggle}) => {
     const [session] = useSession();
-    const [isOpen,setIsOpen] = useState(false)
+    const [accountOpen,setAccountOpen] = useState(false)
     const [isSearch,setIsSearch] = useState(false)
     const inputRef = useRef("")
 
@@ -78,7 +78,7 @@ const Header = ({toggle}) => {
                     />
                 ) : (
                     <Image
-                    onClick={()=>{setIsOpen(!isOpen)}}
+                    onClick={()=>{setAccountOpen(!accountOpen)}}
                         src={session.user.image}
                         alt="User image"
                         height={28}
@@ -99,7 +99,7 @@ const Header = ({toggle}) => {
                     <p>Google Apps</p>
                 </ReactTooltip>
             </div>
-            <Account isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Account accountOpen={accountOpen} setAccountOpen={setAccountOpen} />
             </div>
         </header>
     );

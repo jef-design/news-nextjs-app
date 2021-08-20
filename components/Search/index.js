@@ -21,9 +21,9 @@ const Search = React.forwardRef(({openSearch,setOpenSearch},ref) => {
         router.push(`/results/${query}`)
     }
     useEffect(() => {
-        // if (window.innerWidth < 768) {
-        //     setOpenSearch(false)
-        //   }
+        if (window.innerWidth < 768) {
+            setOpenSearch(false)
+          }
         
          
     }, [])

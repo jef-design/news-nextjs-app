@@ -17,15 +17,17 @@ const Header = ({toggle}) => {
         setOpenSearch(!openSearch)
     }
     const handleFocus = () => {
-        inputRef.current.focus();
+        setTimeout(()=>{
+            inputRef.current.focus();
+        },100)
       }
       useEffect(() => {
         const resizeHandler = () =>{
             if (window.innerWidth > 768) {
                 setOpenSearch(false)
               }
-              else if(window.innerWidth < 768){
-                setOpenSearch(false)
+              else if(window.innerWidth > 768){
+                setOpenSearch(true)
               }
         };
         window.addEventListener('resize', resizeHandler);

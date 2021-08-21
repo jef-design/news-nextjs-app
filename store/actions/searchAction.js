@@ -11,8 +11,11 @@ export const fetchSearch = (query) =>{
                type: ActionTypes.FETCH_IS_LOADING
              });
              const response = await axios.get(`https://gnews.io/api/v4/search?q=${query}&token=${token}`)
-             dispatch({type: ActionTypes.FETCH_SEARCH,
+            dispatch({type: ActionTypes.FETCH_SEARCH,
                  payload: response.data.articles})
+            dispatch({
+                type: ActionTypes.FETCH_IS_SUCCESS
+            });
           } catch (error) {
              
           }

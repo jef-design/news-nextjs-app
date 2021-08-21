@@ -31,12 +31,12 @@ module.exports = {
           '10%': {
             left:'0%',
             right:'75%',
-            width:'60%',
+            width:'70%',
           },
           '90%': {
             right:'0%',
             left:'75%',
-            width:'60%',
+            width:'70%',
           },
           '100% ':{
             left:'100%',

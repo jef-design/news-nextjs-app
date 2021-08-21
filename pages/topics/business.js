@@ -9,18 +9,23 @@ import Loader from "../../components/Loader";
 function Business() {
     const dispatch = useDispatch();
     const business = useSelector(state => state.fetchnews.business);
-    const loading = useSelector(state => state.miscloading.loading)
+    const loading = useSelector(state => state.miscloading.loading);
 
     useEffect(() => {
         dispatch(fetchBusiness());
     }, [dispatch]);
     return (
         <section>
-            <Meta title="Google News - Business" 
-            image="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"
-            description="Read full articles, browse thousand of titles and more on the Business topic with Google News"
-             />
-            <HeaderPage pageimage="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"  pagetitle="Business" iconcolor="bg-business" />
+            <Meta
+                title="Google News - Business"
+                image="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"
+                description="Read full articles, browse thousand of titles and more on the Business topic with Google News"
+            />
+            <HeaderPage
+                pageimage="https://lh4.ggpht.com/A0UiqrMFOJnh5R_g7xhIrslGxotNEcyK5V15p5yJkUlrXMBGqGw3TkU0x06Yb0Q-72QXK9N9=p-rw"
+                pagetitle="Business"
+                iconcolor="bg-business"
+            />
 
             {business &&
                 business.map((b, i) => {
@@ -35,19 +40,21 @@ function Business() {
                     } = b;
                     return (
                         <>
-                         {loading ? <Loader/> : 
-                         <NewsCard
-                            key={i}
-                            title={title}
-                            image={image}
-                            description={description}
-                            url={url}
-                            publishedAt={publishedAt}
-                            source={source}
-                            content={content}
-                        />}
-                        
-                       </>
+                            {loading ? (
+                                <Loader />
+                            ) : (
+                                <NewsCard
+                                    key={i}
+                                    title={title}
+                                    image={image}
+                                    description={description}
+                                    url={url}
+                                    publishedAt={publishedAt}
+                                    source={source}
+                                    content={content}
+                                />
+                            )}
+                        </>
                     );
                 })}
         </section>

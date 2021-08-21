@@ -3,10 +3,12 @@ import Header from "../Header";
 import SideBar from "../Sidebar/Sidebar";
 import Login from "../Login/Login";
 import Meta from "../Meta/Meta";
+import { useSession } from "next-auth/client";
+import Home from "../../pages";
 
 export default function Layout({ children }) {
  
-
+    const [session] = useSession()
     const [sideBarOpen, setsideBarOpen] = useState(true);
 
     const toggle = () => {
@@ -27,6 +29,7 @@ export default function Layout({ children }) {
 
         return () => window.removeEventListener('resize', resizeHandler);
       }, []);
+    // if(!session) return <Home/>
     return (
         <>
         <Meta />
@@ -37,7 +40,7 @@ export default function Layout({ children }) {
                     setsideBarOpen={setsideBarOpen}
                     toggle={toggle}  
                 />
-                <main className="main max-w-[1023px] mx-auto p-4 mt-20 ml-64 lg:ml-0">
+                <main className="main max-w-[1023px] mx-auto p-4 mt-20 ml-72 lg:ml-0">
                     {children}
                 </main>
             </div>

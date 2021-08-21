@@ -32,7 +32,7 @@ const Search = React.forwardRef(({openSearch,setOpenSearch},ref) => {
         <form style={{display: openSearch ? 'block' : ""}} onSubmit={SubmitHandler} className="w-full flex justify-center ml-2 mr-1 group-focus:bg-white sm:hidden sm:ml-0 sm:mr-0">
                 <div className="flex items-center border rounded-lg p-2 w-full max-w-2xl bg-gray-100 focus-within:bg-white focus-within:shadow-md">
                     <SearchIcon className="w-7 h-6 sm:hidden" />
-                    <ArrowLeftIcon onClick={()=>{setOpenSearch(!openSearch)}} className="w-7 h-6 hidden cursor-pointer hover:rounded-full sm:block" />
+                    <ArrowLeftIcon onClick={()=>{setOpenSearch(!openSearch)}} className="w-6 h-5 hidden cursor-pointer hover:rounded-full sm:block" />
                     <input
                        ref={ref}
                         type="text"

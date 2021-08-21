@@ -13,7 +13,8 @@ import {
     SupportIcon,
     BeakerIcon,
     HeartIcon,
-    FilmIcon
+    FilmIcon,
+    CubeTransparentIcon
 } from "@heroicons/react/solid";
 import SidebarRow from "./SidebarRow";
 import Link from "next/link";
@@ -68,7 +69,9 @@ function Sidebar({ toggle,sideBarOpen,setsideBarOpen }) {
                 name="Saved searches"
                 href="/my/searches"
             />
-            {/* <SidebarRow Icon={SearchIcon} name="COVID-19"  href="/" /> */}
+            <div className="border-t border-b py-2 ml">
+            <SidebarRow Icon={CubeTransparentIcon} name="COVID-19"  href="/topics/covid" />
+            </div>
             <SidebarRow Icon={GlobeIcon} name="World" href="/topics/world" />
             <SidebarRow
                 Icon={LocationMarkerIcon}

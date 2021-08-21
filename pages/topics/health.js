@@ -34,7 +34,6 @@ function Health() {
                     } = h;
                     return (
                         <>
-                         {loading ? <Loader/> : 
                          <NewsCard
                             key={i}
                             title={title}
@@ -44,7 +43,7 @@ function Health() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />}
+                        />
                         
                        </>
                     );

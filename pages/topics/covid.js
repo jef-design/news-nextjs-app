@@ -34,7 +34,7 @@ function Covid() {
                     } = h;
                     return (
                         <>
-                         {loading ? <Loader/> : 
+                         
                          <NewsCard
                             key={i}
                             title={title}
@@ -44,7 +44,7 @@ function Covid() {
                             publishedAt={publishedAt}
                             source={source}
                             content={content}
-                        />}
+                        />
                         
                        </>
                     );
